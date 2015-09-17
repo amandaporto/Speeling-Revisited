@@ -1,0 +1,7 @@
+puts = print something on screen
+gets = prompt user for input
+boom = Mind Blown!
+committing = what amanda never does
+kurtis = was here
+im = in your computer
+new = word
