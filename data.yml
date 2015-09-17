@@ -13,3 +13,17 @@
     name: definition
     raw_header: *1
     header: *2
+- :word: !ruby/string:WEBrick::HTTPUtils::FormData
+    str: yaml
+    next_data: 
+    filename: 
+    name: word
+    raw_header: &3 []
+    header: &4 {}
+  :definition: !ruby/string:WEBrick::HTTPUtils::FormData
+    str: nice
+    next_data: 
+    filename: 
+    name: definition
+    raw_header: *3
+    header: *4

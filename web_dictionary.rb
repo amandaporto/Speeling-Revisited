@@ -51,8 +51,14 @@ class DisplayDictionary < WEBrick::HTTPServlet::AbstractServlet
 
         <p>Dictionary</p>
         <p>
+        <ul>
         <% dictionary.each do |hash| %>
-        <% end %>
+          <li>
+          <%= hash[:word] %> =
+          <%= hash[:definition] %>
+          </li>
+          <% end %>
+        </ul>
         </p>
 
       </body>
@@ -214,8 +220,14 @@ class SearchDatabase < WEBrick::HTTPServlet::AbstractServlet
       <body>
       <a href="/"> Back to full dictionary </a>
       <p> Search Results </p>
-      <% search_html.each do |word,definition| %>
-      <% end %>
+        <ul>
+        <% search_results.each do |hash| %>
+          <li>
+            <%= hash[:word]%> =
+            <%= hash[:definition]%>
+          </li>
+        <% end %>
+        </ul>
       </p>
       </body>
     </html>
@@ -230,7 +242,7 @@ class SearchDatabase < WEBrick::HTTPServlet::AbstractServlet
     end
 
     search_results = dictionary.select { |hash| hash[:word] == request.query["to_search"] }
-    search_html = "<ul>" + search_results.map { |hash| "<li>#{hash[:word]} : #{hash[:definition]}</li>" }.join + "</ul>"
+    # search_html = "<ul>" + search_results.map { |hash| "<li>#{hash[:word]} : #{hash[:definition]}</li>" }.join + "</ul>"
 
     response.status = 200
     response.body = ERB.new(TEMPLATE).result(binding)
