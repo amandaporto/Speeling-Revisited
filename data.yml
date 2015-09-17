@@ -1,0 +1,15 @@
+---
+- :word: !ruby/string:WEBrick::HTTPUtils::FormData
+    str: test
+    next_data: 
+    filename: 
+    name: word
+    raw_header: &1 []
+    header: &2 {}
+  :definition: !ruby/string:WEBrick::HTTPUtils::FormData
+    str: here
+    next_data: 
+    filename: 
+    name: definition
+    raw_header: *1
+    header: *2
